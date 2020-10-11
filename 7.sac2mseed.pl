@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-@ARGV == 2 or die "Usage: perl $0 dirname\n";
+@ARGV == 1 or die "Usage: perl $0 dirname\n";
 
 my ($dir) = @ARGV;
 
