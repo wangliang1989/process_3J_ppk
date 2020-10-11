@@ -27,4 +27,4 @@ foreach my $zfile (glob "*.z") {
     my ($sta) = split m/\./, $zfile;
     system "sac2mseed ${sta}.? -s 1 -l 01 -o ${sta}.mseed";
 }
-unlink glob "*.[enz]";
+#unlink glob "*.[enz]";
