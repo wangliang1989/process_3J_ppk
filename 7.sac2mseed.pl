@@ -23,8 +23,10 @@ print SAC "r *.[enz] \n";
 print SAC "w over \n";
 print SAC "q \n";
 close(SAC);
+($dir) = (split m/\//, $dir)[-1];
+mkdir "../../mseed/$dir";
 foreach my $zfile (glob "*.z") {
     my ($sta) = split m/\./, $zfile;
-    system "sac2mseed ${sta}.? -s 1 -l 01 -o ${sta}.mseed";
+    system "sac2mseed ${sta}.? -s 1 -l 01 -o ../../mseed/$dir/${sta}.mseed";
 }
 #unlink glob "*.[enz]";
